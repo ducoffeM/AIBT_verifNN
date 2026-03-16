@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AIBT_fm_course"
+version = "0.0.1"
+description = "Introduction to formal verification of Neural Networks (AIBT)"
+readme = "README.md"
+authors = [
+    {email ="melanie.ducoffe@airbus.com"},
+]
+requires-python = ">=3.9"
+dependencies =[
+    "keras>=3",
+    "torch",
+    "numpy",
+    "airobas@git+https://github.com/airbus/Airobas@next_release",
+    "cesna@git+https://github.com/ducoffeM/safety_braking_distance_estimation",
+]
+
+#dynamic = ["version"]
+
+
+[project.urls]
+repository = "https://github.com/ducoffeM/aibt_fm_course"
+
+[tool.setuptools.packages.find]
+include = ["aibt_fm*"]  # This tells pip: "Only look at the code folder"
+exclude = ["notebooks*", "tests*"] # This tells pip: "Ignore these"
